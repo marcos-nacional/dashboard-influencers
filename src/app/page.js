@@ -4,7 +4,7 @@ import styles from "./page.module.css"
 
 async function getData() {
   try {
-    const res = await fetch("https://api-nacional.vercel.app/brasilseg/influencers", { next: { revalidate: 3600 } })
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/brasilseg/influencers`, { next: { revalidate: 3600 } })
     if (!res.ok) {
       throw new Error("Falha ao buscar dados da API")
     }

@@ -682,7 +682,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://api-nacional.vercel.app/brasilseg/influencers")
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/brasilseg/influencers`)
         const result = await response.json()
 
         if (result.success && result.data && result.data.values) {
